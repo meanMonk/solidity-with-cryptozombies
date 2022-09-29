@@ -1,0 +1,15 @@
+{
+  "name": "cryptozombie-tutorial",
+  "version": "1.0.0",
+  "description": "tutorials for solidity from cryptozombie",
+  "main": "index.js",
+  "dependencies": {
+    "solc": "^0.8.17"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "docs": "solcjs --userdoc --devdoc ex1.sol"
+  },
+  "author": "Sahil kashetwar<sahilkashetwar24@gmail.com>",
+  "license": "ISC"
+}
