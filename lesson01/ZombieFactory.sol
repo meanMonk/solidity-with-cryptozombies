@@ -1,12 +1,14 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
-
+import "../base/Ownable.sol";
 
 /// @title Zombie Factory to create zombies from cryptozombies tutorial
 /// @author Sahil Kashetwar
 /// @notice It's factory function to create army of zombie lesson one.
 /// @dev please go throug the docs and respect implementation.
-contract ZombieFactory {
+
+// NOTE: extending the zombie factory with `Ownable`
+contract ZombieFactory is Ownable {
   
   /// @notice Event to be trigger when new zombie created to listen on dapp or frontend.
   /// @dev Event which is getting triggered when new zombie created.
