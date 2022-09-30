@@ -31,14 +31,20 @@ contract ZombieFactory {
   ///@dev array list which holds zombies info.
   Zombie[] public zombies;
   
+  // mappings
+  mapping (uint => address) public zombieToOwner;
+  mapping (address => uint) ownerZombieCount;
+  
   /// @notice Private function to create new zombie and trigger event.
   /// @dev private functions used to create and update zombies arrays with new zombie and dna.
   /// @param _name is name of new zombie
   /// @param _dna randomly generated 16 digit has 
   
-  function _createNewZombie(string memory _name, uint _dna) private {
+  function _createNewZombie(string memory _name, uint _dna) internal {
     zombies.push(Zombie(_name, _dna)); // return new length of array and length - 1 will be id;
     uint id = zombies.length - 1;
+    zombieToOwner[id] = msg.sender;
+    ownerZombieCount[msg.sender]++;
     emit NewZombie(id, _name, _dna);
   }
   
